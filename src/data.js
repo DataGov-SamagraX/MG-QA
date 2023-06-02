@@ -1,14 +1,14 @@
 export const jsonData = [
-  { Que: "Who are you", ans: "I am MG", audio_file: "./data/english.mp3" },
+  {
+    Que: "Who are you",
+    video_file: "./data/m_gandhi_2.mp4",
+  },
   {
     Que: "What is your name",
-    ans: "My name is MG",
-    audio_file: "./data/plain.mp3",
+    video_file: "./data/m_gandhi.mp4",
   },
   {
     Que: "Where are you from",
-    ans: "I am from Earth",
-    audio_file:
-      "./data/X2Download.app - Mahatma Gandhi's Speech _ Gandhi On God and Truth _ Eclectic (192 kbps).mp3",
+    video_file: "./data/m_gandhi.mp4",
   },
 ];

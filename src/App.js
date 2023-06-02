@@ -5,17 +5,17 @@ import './App.css'
 const App = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedQuestion, setSelectedQuestion] = useState(null);
-  const audioRef = useRef();
+  const videoRef = useRef();
   const filteredData = jsonData.filter((data) =>
     data.Que.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
   const handleQuestionClick = (question) => {
     setSelectedQuestion(question);
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.load();
-      audioRef.current.play();
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.load();
+      videoRef.current.play();
     }
   };
 
@@ -54,12 +54,11 @@ const App = () => {
       {selectedQuestion && (
         <div className="answer-container">
           <h3 className="question">{selectedQuestion.Que}</h3>
-          <p className="answer">{selectedQuestion.ans}</p>
-          {selectedQuestion.audio_file && (
-            <audio controls className="audio-player" ref={audioRef}>
-              <source src={selectedQuestion.audio_file} type="audio/mpeg" />
-              Your browser does not support the audio element.
-            </audio>
+          {selectedQuestion.video_file && (
+            <video controls className="video-player" ref={videoRef}>
+              <source src={selectedQuestion.video_file} type="video/mp4" />
+              Your browser does not support the video element.
+            </video>
           )}
         </div>
       )}
